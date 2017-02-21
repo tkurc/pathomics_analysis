@@ -93,7 +93,14 @@ add_library(localLibraries
         lib/InputParameters.cxx
         lib/Normalization.cpp
         lib/PixelOperations.cpp
-        lib/Logger.cpp)
+        lib/Logger.cpp
+        lib/ConvertFunctions/ConvertBinaryToLabel.cpp
+        lib/ConvertFunctions/ConvertLabelToCvMat.cpp
+        lib/ConvertFunctions/ConvertRGBToLabel.cpp
+        lib/ConvertFunctions/ConvertSlicerToLabel.cpp
+        lib/ConvertFunctions/IsImageBinary.cpp
+        lib/ConvertFunctions/ReadUnknownImageType.cpp
+        lib/utilityFeaturesIO.cxx)
 
 set(Libraries
         localLibraries
