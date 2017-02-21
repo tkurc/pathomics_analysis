@@ -1,7 +1,7 @@
 FROM sbubmi/segmentation_base:latest
 
 # Install analysis code
-RUN git clone https://github.com/SBU-BMI/pathomics_analysis.git && \
+RUN git clone -b feature/nscale-integration https://github.com/SBU-BMI/pathomics_analysis.git && \
 	cd pathomics_analysis && \
 	cd nucleusSegmentation && \
 	mkdir build && \
@@ -9,4 +9,4 @@ RUN git clone https://github.com/SBU-BMI/pathomics_analysis.git && \
 	cmake ../src && \
 	make -j4 && \
 	cp app/main* /usr/local/bin/. && \
-        cp ../script/mainAggregateFeatures.py  /usr/local/bin/.
+  cp ../script/mainAggregateFeatures.py  /usr/local/bin/.
