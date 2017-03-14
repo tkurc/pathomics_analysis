@@ -440,7 +440,7 @@ namespace ImagenomicAnalytics
 	  cv.setMask(nucleusBinaryMask);
 	  cv.setNumIter(levelsetNumberOfIteration);
 	  cv.setCurvatureWeight(curvatureWeight);
-	  cv.doSegmenation();
+	  cv.doSegmentation();
 	  time(&end);
 	  double dif = difftime(end, start);
 	  printf("Elasped time is %.2lf seconds.\n", dif);
@@ -524,7 +524,7 @@ namespace ImagenomicAnalytics
 	  cv.setMask(nucleusBinaryMask);
 	  cv.setNumIter(numiter);
 	  cv.setCurvatureWeight(curvatureWeight);
-	  cv.doSegmenation();
+	  cv.doSegmentation();
 
 	  CSFLSLocalChanVeseSegmentor2D<itkFloatImageType::PixelType>::LSImageType::Pointer phi = cv.mp_phi;
 
@@ -610,7 +610,7 @@ namespace ImagenomicAnalytics
 	  cv.setMask(nucleusBinaryMask);
 	  cv.setNumIter(levelsetNumberOfIteration);
 	  cv.setCurvatureWeight(curvatureWeight);
-	  cv.doSegmenation();
+	  cv.doSegmentation();
 	  time(&end);
 	  double dif = difftime(end, start);
 	  printf("Elasped time is %.2lf seconds.\n", dif);
@@ -664,7 +664,7 @@ namespace ImagenomicAnalytics
 	  cv.setMask(nucleusBinaryMask);
 	  cv.setNumIter(numiter);
 	  cv.setCurvatureWeight(curvatureWeight);
-	  cv.doSegmenation();
+	  cv.doSegmentation();
 
 	  CSFLSLocalChanVeseSegmentor2D<itkFloatImageType::PixelType>::LSImageType::Pointer phi = cv.mp_phi;
 
@@ -748,7 +748,7 @@ namespace ImagenomicAnalytics
 	  cv.setMask(nucleusBinaryMask);
 	  cv.setNumIter(levelsetNumberOfIteration);
 	  cv.setCurvatureWeight(curvatureWeight);
-	  cv.doSegmenation();
+	  cv.doSegmentation();
 	  time(&end);
 	  double dif = difftime(end, start);
 	  printf("Elasped time is %.2lf seconds.\n", dif);
