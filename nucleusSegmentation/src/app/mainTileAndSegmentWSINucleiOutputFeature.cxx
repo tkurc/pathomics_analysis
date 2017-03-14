@@ -64,7 +64,7 @@ int main(int argc, char **argv)
     }
 
   /*--------------------------------------------------------------------------------
-    Higher value will cause smoother nucelear boundary.
+    Higher value will cause smoother nuclear boundary.
 
     range: [0, 1]
     --------------------------------------------------------------------------------*/
