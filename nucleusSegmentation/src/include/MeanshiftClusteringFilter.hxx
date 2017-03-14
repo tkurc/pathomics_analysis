@@ -153,7 +153,7 @@ namespace gth818n
 
     for (long it = 0; it < m_numberOfMSIteration; ++it)
       {
-        for (long itp = 0; itp < m_seedPoints->Size(); ++itp)
+        for (unsigned int itp = 0; itp < m_seedPoints->Size(); ++itp)
           {
             queryPoint = m_seedPoints->GetMeasurementVector(itp);
             m_tree->Search( queryPoint, m_radius, neighbors ) ;
@@ -171,7 +171,7 @@ namespace gth818n
 
             m_seedPoints->SetMeasurementVector(itp, newPosition);
 
-            /// If relative increamental is small enough, break
+            /// If relative incremental is small enough, break
             VectorType del = queryPoint - newPosition;
             for (unsigned int idim = 0; idim < NPointDimension; ++idim)
               {
