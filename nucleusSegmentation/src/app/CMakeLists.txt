@@ -31,8 +31,9 @@ include(${CMAKE_ROOT}/Modules/ExternalProject.cmake)
 option(build_mainSegmentFeatures "build mainSegmentFeatures?" ON)
 
 option(build_computeFeatures "build computeFeatures?" ON)
+option(build_computeFeaturesCombined "build computeFeaturesCombined?" ON)
 
-if (build_mainSegmentFeatures OR build_computeFeatures)
+if (build_mainSegmentFeatures OR build_computeFeatures OR build_computeFeaturesCombined)
 
     ExternalProject_Add(nscale-proj
             DOWNLOAD_DIR nscale
@@ -69,4 +70,11 @@ if (build_mainSegmentFeatures OR build_computeFeatures)
         add_dependencies(computeFeatures nscale-proj)
     endif (build_computeFeatures)
 
-endif (build_mainSegmentFeatures OR build_computeFeatures)
+    if (build_computeFeaturesCombined)
+        set(cexx computeFeaturesCombined)
+        add_executable(${cexx} ${cexx}.cxx)
+        target_link_libraries(${cexx} segment featuresAll ${Libraries})
+        add_dependencies(computeFeaturesCombined nscale-proj)
+    endif (build_computeFeaturesCombined)
+
+endif (build_mainSegmentFeatures OR build_computeFeatures OR build_computeFeaturesCombined)
