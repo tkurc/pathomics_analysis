@@ -429,6 +429,7 @@ namespace ImagenomicAnalytics
         }
       }
 
+      // SEGMENT: ChanVese
       if (!ScalarImage::isImageAllZero<itkBinaryMaskImageType>(nucleusBinaryMask)) {
         std::cout << "before CV\n" << std::flush;
 
@@ -487,6 +488,7 @@ namespace ImagenomicAnalytics
         }
 
 
+      // SEGMENT: Declumping
       if (doDeclump) {
         if (!ScalarImage::isImageAllZero<itkBinaryMaskImageType>(nucleusBinaryMask)) {
           gth818n::BinaryMaskAnalysisFilter binaryMaskAnalyzer;
@@ -516,7 +518,7 @@ namespace ImagenomicAnalytics
         }
       }
 
-
+      // SEGMENT: ChanVese again, with numiter = 50.
       if (!ScalarImage::isImageAllZero<itkBinaryMaskImageType>(nucleusBinaryMask)) {
         int numiter = 50;
         CSFLSLocalChanVeseSegmentor2D<itkFloatImageType::PixelType> cv;
@@ -536,7 +538,7 @@ namespace ImagenomicAnalytics
         }
       }
 
-
+      // FIX hole in object
       fhFilterType::Pointer fhfilter1 = fhFilterType::New();
       fhfilter1->SetInput( nucleusBinaryMask );
       fhfilter1->SetForegroundValue( 1 );
